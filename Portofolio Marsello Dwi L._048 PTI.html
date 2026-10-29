@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marsello Dwi Lucatoni – Portofolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2f5f8; --surface:#ffffff; --ink:#15233d; --muted:#53627c;
+  --line:#d5dde8; --accent:#2c56e0; --accent-ink:#ffffff; --tag:#e3eaf8;
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1829; --surface:#17233a; --ink:#e8eef9; --muted:#9db0cf;
+    --line:#2a3a58; --accent:#7c9cff; --accent-ink:#0f1829; --tag:#22314f;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1829; --surface:#17233a; --ink:#e8eef9; --muted:#9db0cf;
+  --line:#2a3a58; --accent:#7c9cff; --accent-ink:#0f1829; --tag:#22314f;
+  color-scheme:dark;
+}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+.layout{max-width:1120px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:minmax(260px,340px) 1fr;gap:4rem}
+aside{position:sticky;top:0;align-self:start;height:100vh;height:100dvh;padding:4rem 0 2.5rem;display:flex;flex-direction:column;justify-content:space-between}
+h1{font:800 clamp(2.6rem,5vw,3.6rem)/1 var(--head);letter-spacing:-.035em;margin:0 0 1rem}
+.role{font:600 1.15rem/1.4 var(--head);color:var(--accent);margin:0 0 1rem}
+.tagline{color:var(--muted);margin:0;max-width:32ch}
+nav ul{list-style:none;margin:0;padding:0;display:grid;gap:.35rem}
+nav a{display:inline-block;text-decoration:none;color:var(--muted);font-weight:500;padding:.2rem 0;border-bottom:2px solid transparent}
+nav a:hover,nav a.on{color:var(--ink);border-color:var(--accent)}
+.side-foot{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:.65rem 1.1rem;border-radius:8px;background:var(--accent);color:var(--accent-ink);text-decoration:none;border:0;cursor:pointer;font:inherit;font-weight:600}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+
+main{padding:4rem 0 3rem}
+section{padding-bottom:3.5rem}
+h2{font:700 1.6rem/1.2 var(--head);letter-spacing:-.02em;margin:0 0 1.25rem}
+p{margin:0 0 1rem;max-width:62ch}
+
+.skills{display:grid;gap:1rem}
+.skill-group h3{font:600 1rem var(--head);margin:0 0 .5rem;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:0;padding:0}
+.tags li{background:var(--tag);padding:.3rem .8rem;border-radius:999px;font-size:.95rem;font-weight:500}
+
+.project{display:grid;gap:.4rem;padding:1.4rem 0;border-top:1px solid var(--line)}
+.project:last-child{border-bottom:1px solid var(--line)}
+.project h3{font:700 1.2rem var(--head);margin:0}
+.project h3 a{text-decoration:none}
+.project h3 a:hover{color:var(--accent);text-decoration:underline}
+.project p{color:var(--muted);margin:0}
+.project .tags{margin-top:.5rem}
+.project .tags li{font-size:.85rem;padding:.15rem .65rem}
+
+.timeline{border-left:2px solid var(--line);padding-left:1.5rem;display:grid;gap:2rem;margin:0;list-style:none}
+.timeline li{position:relative}
+.timeline li::before{content:"";position:absolute;left:calc(-1.5rem - 7px);top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.when{color:var(--muted);font-size:.95rem;margin:0}
+.timeline h3{font:700 1.15rem var(--head);margin:.1rem 0 .4rem}
+.timeline p:last-child{margin:0;color:var(--muted)}
+
+.contact-list{display:grid;gap:.6rem;list-style:none;margin:0 0 1.25rem;padding:0}
+.contact-list span{display:inline-block;min-width:6.5rem;color:var(--muted)}
+.contact-list a{font-weight:500}
+footer{color:var(--muted);font-size:.9rem;padding-top:1rem;border-top:1px solid var(--line)}
+
+@media (max-width:860px){
+  .layout{grid-template-columns:1fr;gap:0}
+  aside{position:static;height:auto;padding:2.5rem 0 1rem;gap:1.5rem}
+  nav ul{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem}
+  main{padding-top:1.5rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- ===== SIDEBAR: nama & navigasi ===== -->
+  <aside>
+    <div>
+      <h1>Marsello Dwi Lucatoni</h1>
+      <p class="role">Pendidikan teknologi Informasi</p>
+      <p class="tagline">Mahasiswa Universitas Negeri Surabaya 2026.</p>
+      <nav aria-label="Navigasi utama" style="margin-top:2rem">
+        <ul>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#kemampuan">Kemampuan</a></li>
+          <li><a href="#proyek">Proyek</a></li>
+          <li><a href="#pengalaman">Pengalaman</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="side-foot">
+      <a class="btn" href="#kontak">Hubungi saya</a>
+      <button class="btn ghost" id="theme" type="button" aria-label="Ganti tema terang atau gelap">Ganti tema</button>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ===== TENTANG ===== -->
+    <section id="tentang">
+      <h2>Tentang saya</h2>
+      <p>Halo, saya Marsel, mahasiswa UNESA angkatan 2026, saya memiliki kemampuan di bidang jaringan dan mempuyai pengalaman magang di bidang jaringan komputer.</p>
+      <p>Saya mampu bekerja dengan tim, adaptif, dan disiplin. mempuyai kemampuan bahasa inggris untuk memahami teks dan melakukan komunikasi sederhana.</p>
+    </section>
+
+    <!-- ===== KEMAMPUAN ===== -->
+    <section id="kemampuan">
+      <h2>Kemampuan</h2>
+      <div class="skills">
+        <div class="skill-group">
+          <h3>Hardskill</h3>
+          <ul class="tags"><li>routing</li><li>mikrotik configuration</li><li>LAN installation</li><li>splicing fiber optic</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROYEK ===== -->
+    <section id="proyek">
+      <h2>Proyek</h2>
+      <article class="project">
+        <h3><a href="#" target="_blank" rel="noopener">Database Toko </a></h3>
+        <p>Database toko dengan 10 tabel hasi 3 tahap normalisasi dan memiliki relasi pada setiap tabelnya.</p>
+      </article>
+      <article class="project">
+        <h3><a href="#" target="_blank" rel="noopener">crimping kabel lan dan splicing fiber optik</a></h3>
+        <p>Instalasi kabel untuk menghubungkan jaringan pada komputer.</p>
+    </section>
+
+    <!-- ===== PENGALAMAN ===== -->
+    <section id="pengalaman">
+      <h2>Pengalaman</h2>
+      <ol class="timeline">
+          <p class="when">2023</p>
+          <h3>IT Consultan intern di CV General Solusindo</h3>
+          <p>membantu klien dalam instalasi dan konfigurasi dan troubleshooting dalam pengelolaan jaringan komputer.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===== KONTAK ===== -->
+    <section id="kontak">
+      <h2>Kontak</h2>
+      <p>Anda bisa menghubungi saya melalui contact list berikut ini.</p>
+      <ul class="contact-list">
+        <i><span>Email</span><a href="marceldwi44@gmail.com">marceldwi44@gmail.com</a></li>
+        <li><span>WhatsApp</span><a href="https://wa.me/6281227133074" target="_blank" rel="noopener">+62 812-2713-3074</a></li>
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/marsello-dwi-lucatoni-060329386" target="_blank" rel="noopener">linkedin.com/in/Marsello Dwi Lucatoni</a></li>
+      </ul>
+      <a class="btn" href="mailto:marceldwi44@gmail.com">Kirim email</a>
+    </section>
+
+    <footer>© <span id="year">2026</span> Marsello Dwi Lucatoni</footer>
+  </main>
+</div>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Ganti tema terang/gelap
+var root = document.documentElement;
+try { var saved = localStorage.getItem("tema"); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+document.getElementById("theme").addEventListener("click", function () {
+  var dark = root.getAttribute("data-theme") === "dark" ||
+    (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+  var next = dark ? "light" : "dark";
+  root.setAttribute("data-theme", next);
+  try { localStorage.setItem("tema", next); } catch (e) {}
+});
+
+// Tandai menu yang sedang dibaca
+var links = document.querySelectorAll("nav a");
+var secs = document.querySelectorAll("main section");
+if ("IntersectionObserver" in window) {
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) {
+        links.forEach(function (a) { a.classList.toggle("on", a.getAttribute("href") === "#" + en.target.id); });
+      }
+    });
+  }, { rootMargin: "-30% 0px -60% 0px" });
+  secs.forEach(function (s) { io.observe(s); });
+}
+</script>
+</body>
+</html>
